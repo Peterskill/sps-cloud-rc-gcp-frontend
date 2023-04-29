@@ -14,10 +14,10 @@ fi
 gsutil mb gs://www.sps-cloud-rc.cloud/
 echo "uploading FE folder"
 
-gsutil cp -r ./* gs://www.sps-cloud-rc.cloud/
+gsutil cp -r ./Website/* gs://www.sps-cloud-rc.cloud/
 
 #allow public acess to the bucket
-gsutil iam ch allUsers:objectViewer gs://www.sps-cloud-rc.cloud
+#gsutil iam ch allUsers:objectViewer gs://www.sps-cloud-rc.cloud
 
 #set default static page for the bucket
-gsutil web set -m index.html gs://www.sps-cloud-rc.cloud
+#gsutil web set -m index.html gs://www.sps-cloud-rc.cloud
