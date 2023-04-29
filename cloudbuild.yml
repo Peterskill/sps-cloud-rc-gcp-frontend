@@ -1,0 +1,7 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:latest'
+  id: Sync website Content
+  args: ['gsutil', '-m', 'rsync', '-d', '-r', 'Website/', 'gs://gs://www.sps-cloud-rc.cloud']
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:latest'
+  id: Invalidate the Content CDN
+  args: ['gcloud', 'compute', 'sps-cloud', 'invalidate-cdn-cache', 'sps-cloud-rc-lb', '--path', '/*', '--project', 'cloud-resume-challenge-385006']
