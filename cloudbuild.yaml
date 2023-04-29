@@ -1,7 +1,18 @@
 steps:
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:latest'
-  id: Sync website Content
-  args: ['gsutil', '-m', 'rsync', '-d', '-r', 'Website/', 'gs://gs://www.sps-cloud-rc.cloud']
-- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk:latest'
-  id: Invalidate the Content CDN
-  args: ['gcloud', 'compute', 'sps-cloud', 'invalidate-cdn-cache', 'sps-cloud-rc-lb', '--path', '/*', '--project', 'cloud-resume-challenge-385006']
+  - id: "Update GCS Bucket"
+    name: "gcr.io/cloud-builders/gsutil"
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+      chmod +x ./updatebucket.sh
+      ./updatebucket.sh $cloud-resume-challenge-385006
+  - id: "Invalidate Cloud CDN"
+    name: "gcr.io/cloud-builders/gcloud"
+    entrypoint: 'bash'
+    args:
+    - '-c'
+    - |
+      gcloud compute url-maps invalidate-cdn-cache example-lb --path "/*"
+options:
+  logStreamingOption: STREAM_ON
