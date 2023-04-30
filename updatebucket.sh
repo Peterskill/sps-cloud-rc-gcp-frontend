@@ -8,7 +8,7 @@ return_value=$?
 if [[ $return_value == 0 ]]
 then
     echo "File exist"
-    gsutil rsync -d Website/* gs://www.sps-cloud-rc.cloud/
+    gsutil rsync -d ./Website gs://www.sps-cloud-rc.cloud/
     echo "all file sync done"
 
 
