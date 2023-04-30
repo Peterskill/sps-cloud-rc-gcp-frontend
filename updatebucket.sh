@@ -15,6 +15,9 @@ then
 else
     echo "creating new bucket"
     gsutil mb -l us www.sps-cloud-rc.cloud -p cloud-resume-challenge-385006
+    echo "syncing files"
+    gsutil rsync -d ./Website gs://www.sps-cloud-rc.cloud/
+    echo "Done sycning"
     echo "setting permission"
     gsutil iam ch  allUsers:objectViewer gs://www.sps-cloud-rc.cloud
     gsutil web set -m index.html gs://www.sps-cloud-rc.cloud
