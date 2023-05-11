@@ -1,5 +1,5 @@
 
 
-fetch('https://j3v9fd4skd.execute-api.us-east-1.amazonaws.com/default').then(reponse=>reponse.json()).then(data=>{
+fetch('https://us-central1-sps-cloud-rc.cloudfunctions.net/visitor-count-v1').then(reponse=>reponse.json()).then(data=>{
     document.getElementById('visitor-count').innerText=data.count
 })
