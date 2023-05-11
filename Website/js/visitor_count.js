@@ -1,5 +1,5 @@
 
 
-fetch('https://visitor-count-frk6a7sweq-uc.a.run.app').then(reponse=>reponse.json()).then(data=>{
+fetch('https://j3v9fd4skd.execute-api.us-east-1.amazonaws.com/default').then(reponse=>reponse.json()).then(data=>{
     document.getElementById('visitor-count').innerText=data.count
 })
