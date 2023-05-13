@@ -182,14 +182,12 @@
         <div class="col-lg-7">
           <div class="about-descr">
 
-            <p class="p-heading">Building a Scalable and Reliable Website on Google Cloud Platform with Google Cloud Storage, Load Balancer, and Firebase </p>
-            <p class="separator">My website is designed and hosted in the Google Cloud Platform, providing fast and reliable access to users around the world. To store my website, I am using Google Cloud Storage, which allows me to easily store and serve static website files, such as HTML, CSS, and JavaScript.
+            <p class="p-heading">Hosting a Scalable Website on Google Cloud Platform with Cloud Storage, Load Balancer, Cloud Functions, and Firebase </p>
+            <p class="separator">My website is designed and hosted on the Google Cloud Platform. The website's content is stored in Google Cloud Storage, which provides highly durable and available object storage with low latency and high throughput. To access the website content stored in the Cloud Storage bucket, I used the Google Load Balancer, which distributes incoming traffic across multiple instances of my website hosted in the Google Cloud.
 
-              To ensure that my website is always available to users, I am using the Google Load Balancer, which automatically distributes traffic to multiple instances of my website running on Google Cloud Platform. This provides high availability and redundancy, ensuring that users can always access my website, even if one instance fails.
+              To track visitor counts, I created a serverless Python function in Google Cloud Functions. The function retrieves the visitor count from Firebase, Google's real-time NoSQL database, and increments the value every time a user visits the website. By leveraging the power of serverless computing, I can scale the function automatically to handle any amount of traffic without worrying about infrastructure management.
 
-              To track visitor counts to my website(which you see on the left), I have created a function using Firebase, Google's NoSQL database service. The function retrieves the current visitor count from Firebase and increments it each time a new user accesses my website. This allows me to keep track of how many users are accessing my website at any given time, and provides valuable insights into user behavior and traffic patterns.
-
-              Overall, using the Google Cloud Platform, Google Cloud Storage, the Google Load Balancer, and Firebase, I am able to host a fast, reliable, and scalable website that provides a great user experience for my visitors..</p>
+              Overall, using the Google Cloud Platform's suite of services including Cloud Storage, Load Balancer, Cloud Functions, and Firebase, I can host my website in a highly scalable and cost-effective manner while still providing a great user experience with real-time visitor count tracking.</p>
 
           </div>
 
